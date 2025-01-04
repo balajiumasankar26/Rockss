@@ -1,6 +1,14 @@
-/* src/App.css */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 .App {
   text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
 }
 
 .App-header {
@@ -11,19 +19,38 @@
 
 .App-main {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
+  flex-grow: 1;
   padding: 20px;
 }
 
-.column {
-  width: 30%;
+.section {
   background: white;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 15px;
-  margin: 10px;
+  margin: 10px 0;
+  transition: transform 0.3s;
+}
+
+.section:hover {
+  transform: scale(1.02);
 }
 
 h2 {
   color: #35424a;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
